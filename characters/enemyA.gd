@@ -1,20 +1,24 @@
 extends CharacterBody2D
 
+var speed = 50
+var isChasing = false
+var player = null
 
-var speed = 200
-var player
-
-
-func _ready():
-	player = get_parent().get_node("Player")
-
-
-func _phisics_process(delta):
-	var v = Vector2.ZERO 
-	var player_position = player.position
-	var target = (player_position - position).normalized() * speed
-	velocity = target * delta
-	move_and_slide()
-	look_at(player_position)
+	
+func _physics_process(delta):
+	print("process")
+	if(isChasing):
+		position += (player.position - position)/speed
 	
 	
+
+func _on_detection_area_body_entered(body):
+	print("bodyentered")
+	player = body
+	isChasing = true
+
+
+func _on_detection_area_body_exited(body):
+	print("bodyexited")
+	player = null
+	isChasing = false

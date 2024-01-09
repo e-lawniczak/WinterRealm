@@ -17,7 +17,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_lrecg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,6 +28,3 @@ shape = SubResource("RectangleShape2D_s20k4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(25, 35)
 sprite_frames = SubResource("SpriteFrames_jvddh")
-
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
