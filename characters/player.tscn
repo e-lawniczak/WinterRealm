@@ -22,9 +22,9 @@ collision_layer = 3
 script = ExtResource("1_lrecg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24.5, 34.75)
+position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_s20k4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(25, 35)
+position = Vector2(1, -36)
 sprite_frames = SubResource("SpriteFrames_jvddh")

@@ -1,14 +1,22 @@
 extends CharacterBody2D
 
-var speed = 50
+@export var speed = 200
 var isChasing = false
 var player = null
 
 	
 func _physics_process(delta):
+	var v = Vector2.ZERO
 	print("process")
 	if(isChasing):
-		position += (player.position - position)/speed
+		v += (player.position - position).normalized()
+		velocity = v * speed
+		$AnimatedSprite2D.play()
+	else:
+		velocity = Vector2.ZERO
+		$AnimatedSprite2D.stop()
+		
+	position += velocity * delta
 	
 	
 
