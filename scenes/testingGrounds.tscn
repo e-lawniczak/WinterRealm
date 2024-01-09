@@ -26,7 +26,7 @@ color = Color(0.882353, 0.721569, 0.858824, 1)
 position = Vector2(514, 320)
 
 [node name="enemyA" parent="." instance=ExtResource("2_kghs2")]
-position = Vector2(694, 363)
+position = Vector2(823, 658)
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2

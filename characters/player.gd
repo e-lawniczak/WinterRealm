@@ -1,6 +1,6 @@
-extends Area2D
+extends CharacterBody2D
 
-signal hit
+#signal hit
 
 @export var speed = 400
 
@@ -30,9 +30,6 @@ func _process(delta):
 		
 	position += velocity * delta
 
-
-func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	hide() # Player disappears after being hit.
-	hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
+func hit():
+	print("collsion")
+	hide()
