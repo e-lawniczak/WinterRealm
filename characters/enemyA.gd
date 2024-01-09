@@ -7,7 +7,6 @@ var player = null
 	
 func _physics_process(delta):
 	var v = Vector2.ZERO
-	print("process")
 	if(isChasing):
 		v += (player.position - position).normalized()
 		velocity = v * speed
@@ -30,3 +29,7 @@ func _on_detection_area_body_exited(body):
 	print("bodyexited")
 	player = null
 	isChasing = false
+
+
+func _on_body_body_entered_2(body):
+	player.hit()
