@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://krgwpucw8nqy"]
+
+[ext_resource type="Texture2D" uid="uid://7ubf3j0orl1l" path="res://images/MakeADecision.png" id="1_iyqwt"]
+
+[sub_resource type="Theme" id="Theme_orgoj"]
+
+[node name="MakeADecision" type="Node2D"]
+
+[node name="MakeADecision" type="Sprite2D" parent="."]
+position = Vector2(576.25, 324)
+scale = Vector2(1.21414, 1.05806)
+texture = ExtResource("1_iyqwt")
+
+[node name="Milk" type="Button" parent="MakeADecision"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.887
+offset_top = -180.518
+offset_right = -435.887
+offset_bottom = -140.518
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+text = "Mleko"
+
+[node name="TextEdit2" type="TextEdit" parent="MakeADecision/Milk"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.812
+offset_top = -76.7073
+offset_right = 184.188
+offset_bottom = -38.7073
+grow_horizontal = 2
+grow_vertical = 2
+text = "Co pierwsze dodaje się do płatków z mlekiem?"
+
+[node name="TextEdit" type="TextEdit" parent="MakeADecision/Milk"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.171
+offset_top = -392.378
+offset_right = 239.829
+offset_bottom = -102.378
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_orgoj")
+theme_override_colors/background_color = Color(0.611765, 0.611765, 0.611765, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "WYBIERZ
+MĄDRZE..."
+
+[node name="Cereals" type="Button" parent="MakeADecision"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.887
+offset_top = -133.262
+offset_right = -435.887
+offset_bottom = -93.2622
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+text = "Płatki"

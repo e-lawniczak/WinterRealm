@@ -27,3 +27,6 @@ position = Vector2(514, 320)
 
 [node name="enemyA" parent="." instance=ExtResource("2_kghs2")]
 position = Vector2(694, 363)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
