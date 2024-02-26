@@ -1,0 +1,181 @@
+[gd_scene load_steps=13 format=3 uid="uid://krgwpucw8nqy"]
+
+[ext_resource type="Texture2D" uid="uid://7ubf3j0orl1l" path="res://images/MakeADecision.png" id="1_iyqwt"]
+[ext_resource type="Script" path="res://assets/scripts/MakeADecision.gd" id="1_y6ugm"]
+[ext_resource type="Theme" uid="uid://coqexo1ooq5v7" path="res://assets/font_themes/menu_theme.tres" id="2_8dcjf"]
+[ext_resource type="FontFile" uid="uid://cq28kmjxwde5i" path="res://assets/fonts/SpecialElite.ttf" id="3_ix5yy"]
+[ext_resource type="Texture2D" uid="uid://b37m4kltsc7o1" path="res://assets/images/icons/milk_icon.png" id="4_7bnmc"]
+[ext_resource type="Texture2D" uid="uid://in8skrtbhbxl" path="res://assets/images/icons/cereal2_icon.png" id="5_kojx7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6g8dq"]
+font = ExtResource("3_ix5yy")
+font_size = 96
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbre6"]
+font = ExtResource("3_ix5yy")
+font_size = 24
+
+[sub_resource type="Curve2D" id="Curve2D_sfms3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 131.88, 34.9697, 0, 0, 0, 0, 649.943, 34.9697, 0, 0, 0, 0, 393.794, 191.861)
+}
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_2n5dl"]
+resource_name = "menu_entry_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 818.44]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h8uy8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [818.44]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bnoo"]
+_data = {
+"RESET": SubResource("Animation_h8uy8"),
+"menu_entry_animation": SubResource("Animation_2n5dl")
+}
+
+[node name="MakeADecision" type="Node2D"]
+script = ExtResource("1_y6ugm")
+
+[node name="MakeADecision" type="Sprite2D" parent="."]
+position = Vector2(576.25, 324)
+scale = Vector2(1.21414, 1.05806)
+texture = ExtResource("1_iyqwt")
+
+[node name="Choose_wisely_label" type="Label" parent="MakeADecision"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -871.5
+offset_top = -498.08
+offset_right = -83.5
+offset_bottom = -401.08
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_8dcjf")
+text = "WYBIERZ MĄDRZE"
+label_settings = SubResource("LabelSettings_6g8dq")
+
+[node name="Label" type="Label" parent="MakeADecision"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -784.5
+offset_top = -322.5
+offset_right = -170.5
+offset_bottom = -297.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("2_8dcjf")
+text = "Co jako pierwsze dodaje się do płatków z mlekiem?"
+label_settings = SubResource("LabelSettings_tbre6")
+
+[node name="Milk" type="Button" parent="MakeADecision"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.5
+offset_top = -236.28
+offset_right = -385.5
+offset_bottom = -181.28
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("2_8dcjf")
+text = "Mleko"
+icon = ExtResource("4_7bnmc")
+icon_alignment = 2
+
+[node name="Cereals" type="Button" parent="MakeADecision"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.5
+offset_top = -166.341
+offset_right = -385.5
+offset_bottom = -111.341
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("2_8dcjf")
+text = "Płatki"
+icon = ExtResource("5_kojx7")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(97.8788, 125)
+scale = Vector2(1.21414, 1.05806)
+curve = SubResource("Curve2D_sfms3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(393.794, 191.861)
+rotation = 2.59203
+scale = Vector2(1, 1)
+progress = 818.44
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../Path2D/PathFollow2D/Camera2D")
+libraries = {
+"": SubResource("AnimationLibrary_1bnoo")
+}
