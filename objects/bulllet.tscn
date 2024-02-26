@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwcb5pkt11a3u"]
+
+[ext_resource type="Script" path="res://objects/bulllet.gd" id="1_0x8r4"]
+[ext_resource type="Texture2D" uid="uid://h2q1osp7mpjx" path="res://images/sword_xd.png" id="1_olkae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asve2"]
+size = Vector2(9, 6)
+
+[node name="bullet" type="CharacterBody2D" groups=["bullets"]]
+script = ExtResource("1_0x8r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.444883, 5.62023e-08)
+rotation = 1.5708
+scale = Vector2(1.1, 0.276098)
+texture = ExtResource("1_olkae")
+
+[node name="Area2D" type="Area2D" parent="." groups=["bullets"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["bullets"]]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_asve2")
+
+[connection signal="bullet_hit" from="." to="." method="_on_bullet_hit"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

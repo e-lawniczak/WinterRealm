@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qcwkqeramlgf"]
+[gd_scene load_steps=7 format=3 uid="uid://qcwkqeramlgf"]
 
 [ext_resource type="Script" path="res://characters/player.gd" id="1_lrecg"]
 [ext_resource type="Texture2D" uid="uid://cxxf6xpb6fekd" path="res://images/player_tmp.png" id="1_njroq"]
+[ext_resource type="PackedScene" uid="uid://dwcb5pkt11a3u" path="res://objects/bulllet.tscn" id="2_6xgwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s20k4"]
 size = Vector2(49, 70.5)
@@ -17,9 +18,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0yiq"]
+size = Vector2(56, 77)
+
 [node name="player" type="CharacterBody2D"]
+position = Vector2(2, 29)
 collision_layer = 3
 script = ExtResource("1_lrecg")
+bullet = ExtResource("2_6xgwt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -37)
@@ -28,3 +34,23 @@ shape = SubResource("RectangleShape2D_s20k4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -36)
 sprite_frames = SubResource("SpriteFrames_jvddh")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, -36.5)
+shape = SubResource("RectangleShape2D_m0yiq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -29)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="bullet_spawn" type="Marker2D" parent="Node2D"]
+position = Vector2(35, -35)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

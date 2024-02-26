@@ -20,7 +20,7 @@ radius = 182.275
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1h8k"]
 size = Vector2(41, 40)
 
-[node name="enemyA" type="CharacterBody2D" groups=["mobs"]]
+[node name="enemyA" type="CharacterBody2D"]
 script = ExtResource("1_tpck5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -34,12 +34,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_qdkgo")
 
-[node name="enemy_body" type="Area2D" parent="." groups=["mobs"]]
+[node name="body" type="Area2D" parent="."]
 position = Vector2(0, -21)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("RectangleShape2D_e1h8k")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="area_entered" from="enemy_body" to="." method="_on_enemy_body_area_entered"]
+[connection signal="body_entered" from="body" to="." method="_on_body_body_entered_2"]
