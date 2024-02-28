@@ -35,6 +35,45 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Animation" id="Animation_h8uy8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [818.44]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../Choose_wisely_label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["W"]
+}
+
 [sub_resource type="Animation" id="Animation_2n5dl"]
 resource_name = "menu_entry_animation"
 length = 4.0
@@ -73,45 +112,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["W", "WY", "WYB", "WYBI", "WYBIE", "WYBIER", "WYBIERZ", "WYBIERZ M", "WYBIERZ MĄ", "WYBIERZ MĄD", "WYBIERZ MĄDR", "WYBIERZ MĄDRZ", "WYBIERZ MĄDRZE"]
-}
-
-[sub_resource type="Animation" id="Animation_h8uy8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [818.44]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:zoom")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../Choose_wisely_label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["W"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bnoo"]
@@ -249,7 +249,6 @@ curve = SubResource("Curve2D_sfms3")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(393.794, 191.861)
 rotation = 2.59203
-scale = Vector2(1, 1)
 progress = 818.44
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]

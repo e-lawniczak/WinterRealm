@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://43wwiiqh7e1a"]
+
+[ext_resource type="Texture2D" uid="uid://beo65lo50lxe4" path="res://assets/images/Intro/1_intro.png" id="1_thi21"]
+
+[sub_resource type="Animation" id="Animation_3767r"]
+resource_name = "Intro"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vj5sd"]
+_data = {
+"Intro": SubResource("Animation_3767r")
+}
+
+[node name="Intro" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vj5sd")
+}
+
+[node name="Intro1" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(1.13938, 1.13938)
+texture = ExtResource("1_thi21")
+
+[node name="Intro2" type="Sprite2D" parent="."]
+position = Vector2(600, 304)
+scale = Vector2(1.29818, 1.14639)
+
+[node name="Intro_back_btn" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 576.0
+offset_right = 256.0
+offset_bottom = 624.0
+text = "Powrót"
+
+[node name="Intro_next_btn" type="Button" parent="."]
+offset_left = 896.0
+offset_top = 576.0
+offset_right = 1088.0
+offset_bottom = 624.0
+text = "Dalej"
