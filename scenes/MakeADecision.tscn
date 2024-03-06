@@ -254,8 +254,8 @@ progress = 818.44
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-reset_on_save = false
 root_node = NodePath("../Path2D/PathFollow2D/Camera2D")
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_1bnoo")
 }

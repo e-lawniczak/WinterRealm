@@ -38,6 +38,7 @@ func _process(delta):
 	position += velocity * delta
 	look_at(get_global_mouse_position())
 	$Node2D.look_at(get_global_mouse_position())
+	$Node2D/bullet_spawn.look_at(get_global_mouse_position())
 	
 	if(Input.is_action_pressed("shoot") && able_to_fire):
 		fire()

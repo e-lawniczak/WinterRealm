@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbvc3gadfd06x"]
+[gd_scene load_steps=7 format=3 uid="uid://cbvc3gadfd06x"]
 
 [ext_resource type="Texture2D" uid="uid://bux5mxkeon6q6" path="res://images/enemyA.png" id="1_1xby1"]
 [ext_resource type="Script" path="res://characters/enemyA.gd" id="1_tpck5"]
+[ext_resource type="PackedScene" uid="uid://b3g2nc7hoqyo4" path="res://objects/ItemDrop.tscn" id="2_ptyh0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fmruk"]
 animations = [{
@@ -22,6 +23,7 @@ size = Vector2(41, 40)
 
 [node name="enemyA" type="CharacterBody2D" groups=["mobs"]]
 script = ExtResource("1_tpck5")
+item = ExtResource("2_ptyh0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -20)

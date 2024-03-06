@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3g2nc7hoqyo4"]
+
+[ext_resource type="Texture2D" uid="uid://ssiiyboilup2" path="res://images/item_drops/particle_pink.png" id="1_ij1b5"]
+[ext_resource type="Script" path="res://objects/ItemDrop.gd" id="1_njjt2"]
+[ext_resource type="AudioStream" uid="uid://k7uoqxggml3w" path="res://sounds/impactGlass_light_002.ogg" id="3_q2354"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fnaw"]
+radius = 31.0161
+
+[node name="ItemDrop" type="Area2D"]
+script = ExtResource("1_njjt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ij1b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6fnaw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q2354")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
