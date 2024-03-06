@@ -1,13 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://43wwiiqh7e1a"]
+[gd_scene load_steps=6 format=3 uid="uid://43wwiiqh7e1a"]
 
 [ext_resource type="Texture2D" uid="uid://beo65lo50lxe4" path="res://assets/images/Intro/1_intro.png" id="1_thi21"]
+[ext_resource type="Texture2D" uid="uid://b37m4kltsc7o1" path="res://assets/images/icons/milk_icon.png" id="2_xt0ks"]
 
 [sub_resource type="Animation" id="Animation_3767r"]
 resource_name = "Intro"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_2xn77"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vj5sd"]
 _data = {
-"Intro": SubResource("Animation_3767r")
+"Intro": SubResource("Animation_3767r"),
+"RESET": SubResource("Animation_2xn77")
 }
 
 [node name="Intro" type="Node2D"]
@@ -23,8 +53,9 @@ scale = Vector2(1.13938, 1.13938)
 texture = ExtResource("1_thi21")
 
 [node name="Intro2" type="Sprite2D" parent="."]
-position = Vector2(600, 304)
-scale = Vector2(1.29818, 1.14639)
+position = Vector2(592, 312)
+scale = Vector2(73.75, 24)
+texture = ExtResource("2_xt0ks")
 
 [node name="Intro_back_btn" type="Button" parent="."]
 offset_left = 64.0

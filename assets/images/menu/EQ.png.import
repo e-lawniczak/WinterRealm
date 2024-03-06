@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3h3ehn4uxmme"
-path="res://.godot/imported/pointing_hand.webp-06b8204bbcf6292b3dcbc8d3704fc5e3.ctex"
+uid="uid://cmngidywx8alv"
+path="res://.godot/imported/EQ.png-29b9b4b0d898efcb9032e3cc9c81b89e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/pointing_hand.webp"
-dest_files=["res://.godot/imported/pointing_hand.webp-06b8204bbcf6292b3dcbc8d3704fc5e3.ctex"]
+source_file="res://assets/images/menu/EQ.png"
+dest_files=["res://.godot/imported/EQ.png-29b9b4b0d898efcb9032e3cc9c81b89e.ctex"]
 
 [params]
 
