@@ -7,6 +7,8 @@
 size = Vector2(9, 6)
 
 [node name="bullet" type="CharacterBody2D" groups=["bullets"]]
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_0x8r4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

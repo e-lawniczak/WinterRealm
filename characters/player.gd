@@ -36,7 +36,7 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 		
 	position += velocity * delta
-	look_at(get_global_mouse_position())
+#	look_at(get_global_mouse_position())
 	$Node2D.look_at(get_global_mouse_position())
 	$Node2D/bullet_spawn.look_at(get_global_mouse_position())
 	
